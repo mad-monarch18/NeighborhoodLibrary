@@ -14,7 +14,7 @@ public class Main {
         books[5] = new Book(6767, "isbn-206", "If you give a Mouse a Cookie", false);
         books[6] = new Book(7878, "isbn-207", "Fault in Our Stars", false);
         books[7] = new Book(8989, "isbn-208", "Diary of a Wimpy Kid Dog Days", false);
-        books[8] = new Book(0101, "isbn-209", "No David", false);
+        books[8] = new Book(0101, "isbn-209", "No, David", false);
         books[9] = new Book(1111, "isbn-210", "Harry Potter", false);
         books[10] = new Book(2222, "isbn-211", "Spiderwick Chronicles", false);
         books[11] = new Book(3333, "isbn-212", "Impulse", false);
@@ -33,8 +33,11 @@ public class Main {
 
         System.out.println("Available Books:");
         for (int i = 0; i < books.length; i++){
-            if(!books[i].checkedOut){
-                System.out.println( i + "." + books[i].title );
+            if(books[i].checkedOut){
+                System.out.println("Checked Out: Yes");
+            }
+            else{
+                System.out.println("Checked Out: No");
             }
         }
 
@@ -42,6 +45,15 @@ public class Main {
         String bookChoice = scanner.nextLine();
         System.out.println( name + " you've selected " + bookChoice);
 
+        for (int i = 0; i < books.length; i++) {
+            if (books[i].getTitle().equalsIgnoreCase(bookChoice) && !books[i].isCheckedOut()) {
+                books[i].checkOut();
+                System.out.println(name + ", you've checked out " + bookChoice + ".");
+                break;
+            } else if (books[i].getTitle().equalsIgnoreCase(bookChoice) && books[i].isCheckedOut()) {
+                System.out.println(bookChoice + " is already checked out.");
+                break;
+            }
+        }
     }
-
 }
