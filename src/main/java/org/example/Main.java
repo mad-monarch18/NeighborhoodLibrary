@@ -3,6 +3,15 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+This is missing requirements.
+First off, it doesn't actually display the names of the books. So as the user I had no idea
+what you had in store. I looked at the code and picked a book.
+I was able to check out a book that you didn't have in stock. That shouldn't be allowed.
+Also since the program only runs once, there is no way to have a list of checked out books. You need to put
+your program in a while loop so that it runs continuously runs, that way I can check out more
+than one book and its meaningful to have a checked out books list.
+ */
 public class Main {
     public static void main(String[] args) {
         Book[] books = new Book[20];

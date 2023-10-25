@@ -6,7 +6,16 @@ public class Book {
     public String title;
     public boolean checkedOut;
 
+    //How are you recording who the book is checked out to?
     public Book(int id, String isbn, String title, boolean checkedOut){
+        this.id = id;
+        this.isbn = isbn;
+        this.title = title;
+        this.checkedOut = false;
+    }
+
+    //You could do the constructor like this for less typing
+    public Book(int id, String isbn, String title){
         this.id = id;
         this.isbn = isbn;
         this.title = title;
